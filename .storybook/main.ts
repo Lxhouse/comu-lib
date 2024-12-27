@@ -20,6 +20,17 @@ const config: StorybookConfig = {
         '@': resolve(__dirname, '../src'),
       };
     }
+    if (config.css) {
+      config.css.preprocessorOptions = {
+        less: {
+          javascriptEnabled: true,
+          modifyVars: {
+            'primary-color': '#1DA57A',
+            'border-radius-base': '2px',
+          },
+        },
+      };
+    }
     return config;
   },
 };

@@ -1,35 +1,27 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { ShowHello } from './components';
+import './App.less';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+const App = () => {
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <div className="app-container">
+      <header className="app-header">
+        <h1>COMU-Lib 组件展示</h1>
+      </header>
 
-export default App
+      <main className="components-display">
+        <section className="component-section">
+          <h2>ShowHello 组件</h2>
+          <div className="component-demo">
+            <ShowHello text="默认展示" />
+            <ShowHello text="自定义文本" />
+            <ShowHello text="你好，世界！" />
+          </div>
+        </section>
+
+        {/* 当有新组件时，可以在这里添加新的 section */}
+      </main>
+    </div>
+  );
+};
+
+export default App;
